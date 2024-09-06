@@ -40,7 +40,8 @@ export class News extends Component {
     this.setState({ loading: true });
     const { country, category, apiKey } = this.props;
     const { currentPage, articlesPerPage } = this.state;
-    let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${currentPage}&pageSize=${articlesPerPage}`;
+    // let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${currentPage}&pageSize=${articlesPerPage}`;
+   let url = `https://newsapi.org/v2/everything?q=${category}&from=2024-08-06&apiKey=${apiKey}`
     let data = await fetch(url);
     this.props.setProgress(30);
     let parsedData = await data.json();
